@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="src/styles.css">
 
   <title>Frontend Mentor | Single-page design portfolio</title>
@@ -78,27 +78,29 @@
 			<h3>My work</h3>
 			<ul id="my-work-slider">
 				<li>
-					<img src="/assets/images/image-slide-1.jpg" alt="A 3D abstract piece">
+					<img src="assets/images/image-slide-1.jpg" alt="A 3D abstract piece">
 				</li>
 				<li>
-					<img src="/assets/images/image-slide-2.jpg" alt="A flat abstract piece">
+					<img src="assets/images/image-slide-2.jpg" alt="A flat abstract piece">
 				</li>
 				<li>
-					<img src="/assets/images/image-slide-3.jpg" alt="Mockup for a newspaper design">
+					<img src="assets/images/image-slide-3.jpg" alt="Mockup for a newspaper design">
 				</li>
 				<li>
-					<img src="/assets/images/image-slide-4.jpg" alt="Experimentation on print design">
+					<img src="assets/images/image-slide-4.jpg" alt="Experimentation on print design">
 				</li>
 				<li>
-					<img src="/assets/images/image-slide-5.jpg" alt="An example of an app's design I made">
+					<img src="assets/images/image-slide-5.jpg" alt="An example of an app's design I made">
 				</li>
 			</ul>
-			<button type="button" class="arrow-button" aria-controls="my-work-slider">
-				<img src="assets/images/icon-arrow-left.svg" alt="arrow-left" />
-			</button>
-			<button type="button" class="arrow-button" aria-controls="my-work-slider">
-				<img src="assets/images/icon-arrow-right.svg" alt="arrow-right" />
-			</button>
+			<div>
+				<button type="button" class="arrow-button" aria-controls="my-work-slider">
+					<img src="assets/images/icon-arrow-left.svg" alt="arrow-left" />
+				</button>
+				<button type="button" class="arrow-button" aria-controls="my-work-slider">
+					<img src="assets/images/icon-arrow-right.svg" alt="arrow-right" />
+				</button>
+			</div>
 		</section>
 		<section id="book-a-call">
 			<h3>Book a call with me</h3>
@@ -112,5 +114,6 @@
 		<img src="assets/images/logo.svg" alt="logo" />
 		<button type="button" class="button-one">Free Consultation</button>
 	</footer>
+	<script src="src/slider-scroll.js"></script>
 </body>
 </html>

@@ -24,6 +24,7 @@ ul {
 
 body {
 	background-color: var(--clr-light-cream);
+	margin: 16px;
 }
 
 * {
@@ -194,6 +195,34 @@ section#about-me img {
 	aspect-ratio: 1;
 	margin: auto;
 	display: block;
+}
+
+section#my-work {
+	text-align: center;
+}
+
+section#my-work ul#my-work-slider {
+	display: grid;
+	grid-template-columns: repeat(5, 270px);
+	grid-template-rows: minmax(180px, 1fr);
+	gap: 16px;
+	overflow-x: scroll;
+	scroll-behavior: smooth;
+  	scroll-snap-type: x proximity;
+}
+
+section#my-work ul#my-work-slider img {
+	border-radius: 10px;
+	width: 270px;
+	height: 180px;
+}
+
+section#my-work > div:last-child {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
 }
 
 section#book-a-call {
