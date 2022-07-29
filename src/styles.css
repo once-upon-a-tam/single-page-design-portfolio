@@ -1,0 +1,212 @@
+@font-face {
+	font-family: 'Plus jakarta sans';
+	src: url('../assets/fonts/Plus-jakarta-sans.ttf');
+}
+
+:root {
+	--clr-galactic-blue:	hsl(252, 66%, 62%);
+	--clr-summer-yellow:	hsl(28, 89%, 67%);
+	--clr-pink:				hsl(0, 78%, 79%);
+	--clr-light-red:		hsl(7, 77%, 66%);
+	--clr-cyan:				hsl(172, 46%, 57%);
+	--clr-dark-purple:		hsl(314, 45%, 23%);
+	--clr-light-cream:		hsl(28, 100%, 97%);
+	--clr-medium-brown:		hsl(30, 5%, 45%);
+	--clr-black:			hsl(0, 0%, 1%);
+
+	--skill-pattern-default-height: 64px;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+body {
+	background-color: var(--clr-light-cream);
+}
+
+* {
+	font-family: 'Plus jakarta sans', sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 28px;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 56px;
+	line-height: 70px;
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 51px;
+}
+
+h3 {
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 40px;
+}
+
+p {
+	color: var(--clr-medium-brown);
+}
+
+button {
+	padding: 14px 45px;
+	border-radius: 28px;
+	font-weight: 700;
+	font-size: .88rem;
+	color: var(--clr-light-cream);
+	border: solid 1px transparent;
+	cursor: pointer;
+}
+
+button.button-one {
+	background-color: var(--clr-black);
+}
+
+button.button-one:hover {
+	background-color: var(--clr-galactic-blue);
+}
+
+button.button-two {
+	background-color: var(--clr-light-red);
+}
+
+button.button-two:hover {
+	background-color: var(--clr-summer-yellow);
+}
+
+header, footer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+button.arrow-button {
+	padding: 24px;
+	border-radius: 50%;
+	background-color: var(--clr-black);
+	height: 64px;
+	width: 64px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+button.arrow-button:hover {
+	background-color: var(--clr-galactic-blue);
+}
+
+section:not(#hero):not(#skills) {
+	margin-top: 100px;
+}
+
+section:last-child {
+	margin-bottom: 32px;
+}
+
+section#skills {
+	margin-top: 32px;
+}
+
+section#hero * {
+	text-align: center;
+}
+
+section#skills ul {
+	display: grid;
+	gap: 24px;
+	grid-auto-rows: 182px;
+	grid-template-areas:
+		'Graphic-design Graphic-design'
+		'Graphic-design Graphic-design'
+		'UI-UX Apps'
+		'Illustrations Illustrations'
+		'Photography Photography'
+		'Motion-graphics Motion-graphics';
+}
+
+section#skills ul li {
+	display: grid;
+	grid-template-rows: 1fr auto;
+	padding: 24px;
+	border-radius: 8px;
+}
+
+section#skills ul li img {
+	justify-self: flex-end;
+	align-self: top;
+	width: auto;
+}
+
+section#skills ul li p {
+	justify-self: flex-start;
+	align-self: bottom;
+	color: var(--clr-light-cream);
+	font-size: 24px;
+	font-weight: 700;
+	line-height: auto;
+	margin: 0;
+}
+
+section#skills ul li:nth-child(1) {
+	grid-area: Graphic-design;
+	background-color: var(--clr-galactic-blue);
+}
+
+section#skills ul li:nth-child(2) {
+	grid-area: UI-UX;
+	background-color: var(--clr-summer-yellow);
+}
+
+section#skills ul li:nth-child(3) {
+	grid-area: Apps;
+	background-color: var(--clr-pink);
+}
+
+section#skills ul li:nth-child(4) {
+	grid-area: Illustrations;
+	background-color: var(--clr-light-red);
+}
+
+section#skills ul li:nth-child(5) {
+	grid-area: Photography;
+	background-color: var(--clr-cyan);
+}
+
+section#skills ul li:nth-child(6) {
+	grid-area: Motion-graphics;
+	background-color: var(--clr-dark-purple);
+}
+
+section#about-me {
+	text-align: center;
+}
+
+section#about-me img {
+	width: 300px;
+	aspect-ratio: 1;
+	margin: auto;
+	display: block;
+}
+
+section#book-a-call {
+	background-color: var(--clr-black);
+	border-radius: 10px;
+	padding: 48px 24px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+section#book-a-call * {
+	color: var(--clr-light-cream);
+	margin: 0;
+}
