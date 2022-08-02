@@ -1,5 +1,6 @@
 const slider = document.getElementById('my-work-slider');
 const WORK_PICTURES_AMOUNT = slider.children.length;
+const WORK_PICTURE_WIDTH = slider.querySelector('img').width;
 
 /**
  * @name isSliderScrollToEnd
@@ -8,7 +9,7 @@ const WORK_PICTURES_AMOUNT = slider.children.length;
  * @returns {bool}
  */
 const isSliderScrolledToEnd = () => (
-	slider.scrollLeft === (270 * (WORK_PICTURES_AMOUNT - 1)) - 9
+	slider.scrollLeft === (WORK_PICTURE_WIDTH * (WORK_PICTURES_AMOUNT - 1)) - 9
 );
 
 /**
@@ -22,12 +23,12 @@ const isSliderScrolledToEnd = () => (
 const calculateScrollValue = (direction) => {
 	if (direction === 'left') {
 		return slider.scrollLeft === 0
-			?  (270 * WORK_PICTURES_AMOUNT - 1)
-			: -270;
+			?  (WORK_PICTURE_WIDTH * WORK_PICTURES_AMOUNT - 1)
+			: -WORK_PICTURE_WIDTH;
 	} else if (direction === 'right') {
 		return isSliderScrolledToEnd()
-			? (-270 * (WORK_PICTURES_AMOUNT - 1))
-			: 270;
+			? (-WORK_PICTURE_WIDTH * (WORK_PICTURES_AMOUNT - 1))
+			: WORK_PICTURE_WIDTH;
 	}
 }
 
