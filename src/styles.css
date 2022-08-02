@@ -42,12 +42,6 @@ h1 {
 
 h2 {
 	font-weight: 700;
-	font-size: 40px;
-	line-height: 51px;
-}
-
-h3 {
-	font-weight: 700;
 	font-size: 32px;
 	line-height: 40px;
 }
@@ -281,6 +275,11 @@ section#book-a-call * {
 @media screen and (min-width: 1440px) {
 	body {
 		margin: 32px 165px;
+	}
+
+	h2 {
+		font-size: 40px;
+		line-height: 51px;
 	}
 
 	section#skills ul {
