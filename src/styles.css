@@ -23,8 +23,8 @@ ul {
 }
 
 body {
+	margin: 32px 0;
 	background-color: var(--clr-light-cream);
-	margin: 16px;
 }
 
 * {
@@ -74,6 +74,11 @@ button.button-two {
 
 button.button-two:hover {
 	background-color: var(--clr-summer-yellow);
+}
+
+header, footer, section:not(#my-work) {
+	margin-left: 16px;
+	margin-right: 16px;
 }
 
 header, footer {
@@ -197,7 +202,7 @@ section#my-work {
 
 section#my-work ul#my-work-slider {
 	display: grid;
-	grid-template-columns: repeat(5, 270px);
+	grid-template-columns: repeat(7, 270px);
 	grid-template-rows: minmax(180px, 1fr);
 	gap: 16px;
 	overflow-x: scroll;
@@ -236,7 +241,13 @@ section#book-a-call * {
 
 @media screen and (min-width: 768px) {
 	body {
-		margin: 32px 32px 0 32px;
+		margin-top: 56px;
+		margin-bottom: 56px;
+	}
+
+	header, footer, section:not(#my-work) {
+		margin-left: 32px;
+		margin-right: 32px;
 	}
 
 	section#hero {
@@ -263,7 +274,7 @@ section#book-a-call * {
 	}
 
 	section#my-work ul#my-work-slider {
-		grid-template-columns: repeat(5, 540px);
+		grid-template-columns: repeat(7, 540px);
 	}
 
 	section#my-work ul#my-work-slider img {
@@ -274,7 +285,13 @@ section#book-a-call * {
 
 @media screen and (min-width: 1440px) {
 	body {
-		margin: 32px 165px;
+		margin-top: 64px;
+		margin-bottom: 64px;
+	}
+
+	header, footer, section:not(#my-work) {
+		margin-left: 165px;
+		margin-right: 165px;
 	}
 
 	h2 {
