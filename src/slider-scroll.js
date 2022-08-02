@@ -1,35 +1,12 @@
 const slider = document.getElementById('my-work-slider');
-const WORK_PICTURES_AMOUNT = slider.children.length;
 
-/**
- * @name isSliderScrollToEnd
- * @description Calculates whether the user has scrolled to the end of the slider.
- *
- * @returns {bool}
- */
-const isSliderScrolledToEnd = () => (
-	slider.scrollLeft === (270 * (WORK_PICTURES_AMOUNT - 1)) - 9
+const getCurrentItemIndex = () => (
+	[...slider.children].findIndex((item) => {
+		const { left, right } = item.getBoundingClientRect();
+
+		return left >= 0 && right >= 0;
+	})
 );
-
-/**
- * @name calculateScrollValue
- * @description Calculates the amount of pixels to scroll the slider for.
- *
- * @param {'left' | 'right'} direction The direction towards which the slider should scroll.
- *
- * @returns {number}
- */
-const calculateScrollValue = (direction) => {
-	if (direction === 'left') {
-		return slider.scrollLeft === 0
-			?  (270 * WORK_PICTURES_AMOUNT - 1)
-			: -270;
-	} else if (direction === 'right') {
-		return isSliderScrolledToEnd()
-			? (-270 * (WORK_PICTURES_AMOUNT - 1))
-			: 270;
-	}
-}
 
 /**
  * @name scroll
@@ -40,7 +17,27 @@ const calculateScrollValue = (direction) => {
  * @param {'left' | 'right'} direction The direction towards which the slider should scroll.
  */
 const scroll = (direction) => {
-	slider.scrollBy({ left: calculateScrollValue(direction), behavior: 'smooth' });
+	const currentItemIndex = getCurrentItemIndex();
+	let itemToScrollTo;
+
+	if (direction === 'left') {
+		itemToScrollTo = currentItemIndex === 1
+			? slider.children[slider.children.length - 1]
+			: slider.children[currentItemIndex - 1];
+	} else if (direction === 'right') {
+		if (slider.children[slider.children.length - 1].getBoundingClientRect().right === slider.getBoundingClientRect().width) {
+			itemToScrollTo = slider.children[0];
+		} else {
+			itemToScrollTo = currentItemIndex === slider.children.length - 1
+				? slider.children[1]
+				: slider.children[currentItemIndex + 1];
+		}
+	}
+
+	itemToScrollTo.scrollIntoView({
+		behavior: 'smooth',
+		inline: 'center',
+	});
 }
 
 const arrowButtons = document.querySelectorAll('button[aria-controls="my-work-slider"]');
@@ -52,3 +49,23 @@ arrowButtons[0].addEventListener('click', () => {
 arrowButtons[1].addEventListener('click', () => {
 	scroll("right");
 });
+
+
+/**
+ * @function
+ * @name intializeSlider
+ * 
+ * Adds a phantom div at the start of the item list to allow items to properly be centered when scrolled onto.
+ * Scrolls the slider to the center of the 3rd item.
+ *
+ * @author Tam
+ */
+const initializeSlider = () => {
+	var phantomItem = document.createElement('li');
+	phantomItem.style.width = slider.firstElementChild.getBoundingClientRect().width;
+	slider.insertBefore(phantomItem, slider.firstChild);
+
+	slider.children[3].scrollIntoView({ inline: 'center' });
+}
+
+initializeSlider();

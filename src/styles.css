@@ -23,8 +23,8 @@ ul {
 }
 
 body {
+	margin: 32px 0;
 	background-color: var(--clr-light-cream);
-	margin: 16px;
 }
 
 * {
@@ -41,12 +41,6 @@ h1 {
 }
 
 h2 {
-	font-weight: 700;
-	font-size: 40px;
-	line-height: 51px;
-}
-
-h3 {
 	font-weight: 700;
 	font-size: 32px;
 	line-height: 40px;
@@ -80,6 +74,11 @@ button.button-two {
 
 button.button-two:hover {
 	background-color: var(--clr-summer-yellow);
+}
+
+header, footer, section:not(#my-work) {
+	margin-left: 16px;
+	margin-right: 16px;
 }
 
 header, footer {
@@ -203,7 +202,7 @@ section#my-work {
 
 section#my-work ul#my-work-slider {
 	display: grid;
-	grid-template-columns: repeat(5, 270px);
+	grid-template-columns: repeat(7, 270px);
 	grid-template-rows: minmax(180px, 1fr);
 	gap: 16px;
 	overflow-x: scroll;
@@ -238,4 +237,87 @@ section#book-a-call {
 section#book-a-call * {
 	color: var(--clr-light-cream);
 	margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+	body {
+		margin-top: 56px;
+		margin-bottom: 56px;
+	}
+
+	header, footer, section:not(#my-work) {
+		margin-left: 32px;
+		margin-right: 32px;
+	}
+
+	section#hero {
+		max-width: 752px;
+		margin: auto;
+	}
+
+	section#skills ul {
+		grid-template-areas:
+		"Graphic-design Graphic-design UI-UX Apps"
+		"Graphic-design Graphic-design Illustrations Illustrations"
+		"Photography Photography Motion-graphics Motion-graphics"
+	}
+
+	section#about-me {
+		display: grid;
+		gap: 2rem;
+		grid-template-columns: auto minmax(45%, 1fr);
+		text-align: left;
+	}
+
+	section#about-me > *:not(img) {
+		grid-column: 2;
+	}
+
+	section#my-work ul#my-work-slider {
+		grid-template-columns: repeat(7, 540px);
+	}
+
+	section#my-work ul#my-work-slider img {
+		height: 360px;
+		width: 540px;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	body {
+		margin-top: 64px;
+		margin-bottom: 64px;
+	}
+
+	header, footer, section:not(#my-work) {
+		margin-left: 165px;
+		margin-right: 165px;
+	}
+
+	h2 {
+		font-size: 40px;
+		line-height: 51px;
+	}
+
+	section#skills ul {
+		grid-template-areas:
+		"Graphic-design Graphic-design UI-UX Apps Photography Photography"
+		"Graphic-design Graphic-design Illustrations Illustrations Motion-graphics Motion-graphics"
+	}
+
+	section#book-a-call {
+		padding: 80px 64px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		text-align: left;
+	}
+
+	section#book-a-call > *:first-child > h3 {
+		margin-bottom: 24px;
+	}
+
+	section#book-a-call > *:last-child {
+		justify-self: center;
+		align-self: center;
+	}		
 }
