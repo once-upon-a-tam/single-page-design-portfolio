@@ -27,6 +27,14 @@ body {
 	background-color: var(--clr-light-cream);
 }
 
+main {
+	display: flex;
+	flex-direction: column;
+	margin-top: 32px;
+	margin-bottom: 32px;
+	gap: 64px;
+}
+
 * {
 	font-family: 'Plus jakarta sans', sans-serif;
 	font-size: 18px;
@@ -38,16 +46,19 @@ h1 {
 	font-weight: 700;
 	font-size: 56px;
 	line-height: 70px;
+	margin: 0;
 }
 
 h2 {
 	font-weight: 700;
 	font-size: 32px;
 	line-height: 40px;
+	margin: 0;
 }
 
 p {
 	color: var(--clr-medium-brown);
+	margin: 0;
 }
 
 button {
@@ -103,16 +114,11 @@ button.arrow-button:hover {
 	background-color: var(--clr-galactic-blue);
 }
 
-section:not(#hero):not(#skills) {
-	margin-top: 100px;
-}
-
-section:last-child {
-	margin-bottom: 32px;
-}
-
-section#skills {
-	margin-top: 32px;
+section#hero {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	align-self: center;
 }
 
 section#hero * {
@@ -186,7 +192,16 @@ section#skills ul li:nth-child(6) {
 }
 
 section#about-me {
+	display: grid;
+	gap: 2rem;
+	grid-template-rows: auto auto;
 	text-align: center;
+}
+
+section#about-me div {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
 }
 
 section#about-me img {
@@ -239,10 +254,21 @@ section#book-a-call * {
 	margin: 0;
 }
 
+section#book-a-call > div:first-child {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
 @media screen and (min-width: 768px) {
 	body {
 		margin-top: 56px;
 		margin-bottom: 56px;
+	}
+
+	main {
+		margin-top: 32px;
+		margin-bottom: 32px;
 	}
 
 	header, footer, section:not(#my-work) {
@@ -251,8 +277,11 @@ section#book-a-call * {
 	}
 
 	section#hero {
-		max-width: 752px;
-		margin: auto;
+		gap: 24px;
+	}
+
+	section#hero > h1 {
+		font-size: 44px;
 	}
 
 	section#skills ul {
@@ -263,8 +292,6 @@ section#book-a-call * {
 	}
 
 	section#about-me {
-		display: grid;
-		gap: 2rem;
 		grid-template-columns: auto minmax(45%, 1fr);
 		text-align: left;
 	}
@@ -303,6 +330,10 @@ section#book-a-call * {
 		grid-template-areas:
 		"Graphic-design Graphic-design UI-UX Apps Photography Photography"
 		"Graphic-design Graphic-design Illustrations Illustrations Motion-graphics Motion-graphics"
+	}
+
+	section#about-me div {
+		gap: 32px;
 	}
 
 	section#book-a-call {
