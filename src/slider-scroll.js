@@ -65,7 +65,11 @@ const initializeSlider = () => {
 	phantomItem.style.width = slider.firstElementChild.getBoundingClientRect().width;
 	slider.insertBefore(phantomItem, slider.firstChild);
 
-	slider.children[3].scrollIntoView({ inline: 'center' });
+	// Positions the slider items to show the middle element in the center of the slider.
+	slider.children[3].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+
+	// Scrolls back to the top of the page.
+	window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 initializeSlider();
